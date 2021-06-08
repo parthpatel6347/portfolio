@@ -21,6 +21,8 @@ const useStlyes = makeStyles({
     display: "grid",
   },
   titleContainer: {
+    fontFamily: "'Karla', sans-serif;",
+
     position: "relative",
     top: "250px",
     right: "160px",
@@ -29,13 +31,19 @@ const useStlyes = makeStyles({
     // border: "1px solid white",
     zIndex: "5",
     "& h1": {
+      fontWeight: "300",
+      letterSpacing: "8px",
       color: "white",
       margin: 0,
       fontSize: "65px",
     },
     "& p": {
+      fontWeight: "700",
+      letterSpacing: "6px",
+      fontSize: "20px",
       color: "#70A3C1",
       margin: 0,
+      marginLeft: "3px",
     },
   },
 });
