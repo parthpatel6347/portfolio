@@ -5,9 +5,11 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStlyes = makeStyles({
   root: {
     position: "relative",
-    border: "1px solid white",
+    left: "160px",
+    gridArea: "1/1",
+    // border: "1px solid white",
     height: "900px",
-    width: "600px",
+    width: "650px",
   },
   top: {
     position: "absolute",
