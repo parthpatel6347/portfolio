@@ -4,15 +4,27 @@ import { makeStyles } from "@material-ui/core/styles";
 import blue from "./styles/imgs/blue.png";
 import pink from "./styles/imgs/pink.png";
 import green from "./styles/imgs/green.png";
+import sizes from "./styles/sizes";
 
 const useStlyes = makeStyles({
   root: {
     position: "relative",
-    left: "160px",
+    left: "140px",
     gridArea: "1/1",
     // border: "1px solid white",
-    height: "900px",
-    width: "700px",
+    height: "650px",
+    width: "500px",
+    [sizes.medium()]: {
+      height: "450px",
+      width: "359px",
+      left: "102px",
+    },
+    [sizes.small()]: {
+      left: "unset",
+      gridArea: "2/1",
+      height: "405px",
+      width: "323px",
+    },
   },
   top: {
     position: "absolute",

@@ -1,11 +1,12 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import sizes from "./styles/sizes";
 
 const useStlyes = makeStyles({
   root: {
-    height: "750px",
-    width: "500px",
-    borderRadius: "45px",
+    height: "550px",
+    width: "350px",
+    borderRadius: "35px",
     overflow: "hidden",
     display: "flex",
     flexDirection: "column",
@@ -13,6 +14,16 @@ const useStlyes = makeStyles({
     transition: "all 0.2s ease-in-out",
     "&:hover": {
       transform: "scale(1.05)",
+    },
+    [sizes.medium()]: {
+      height: "380px",
+      width: "245px",
+      borderRadius: "30px",
+    },
+    [sizes.small()]: {
+      height: "342px",
+      width: "220px",
+      borderRadius: "25px",
     },
   },
   cardTop: {
