@@ -7,6 +7,10 @@ import bg3 from "./styles/imgs/bg3.png";
 import bg4 from "./styles/imgs/bg4.png";
 import bg5 from "./styles/imgs/bg5.png";
 import bg6 from "./styles/imgs/bg6.png";
+import colorPaletteThumb from "./styles/imgs/colorPaletteThumb.png";
+import ProjectCardReverse from "./ProjectCardReverse";
+import todoThumb from "./styles/imgs/todoThumb.png";
+import todoThumb from "./styles/imgs/todoThumb.png";
 
 const useStlyes = makeStyles({
   root: {
@@ -23,16 +27,36 @@ function Projects(props) {
       background: bg2,
       name: "colorPalette",
       description: "Create and save beautiful color palettes.",
-      used: "HTML, CSS in JS, JS, React, Material UI",
-      thumb: "",
+      used: "React, Material UI",
+      thumb: colorPaletteThumb,
       link: "https://parth-react-color.herokuapp.com/",
       github: "https://github.com/parthpatel6347/react-color-palette",
+    },
+    project2: {
+      background: bg3,
+      name: "List App",
+      description: "An extensive to-do app.",
+      used: "React w/hooks, context API, Material UI",
+      thumb: colorPaletteThumb,
+      link: "https://parthpatel6347.github.io/react-hooks-todo-app/",
+      github: "https://github.com/parthpatel6347/react-hooks-todo-app",
+    },
+    project3: {
+      background: bg1,
+      name: "streetCourts",
+      description: "Find and list public ball courts.",
+      used: "NodeJs, Express, Bootstrap, MongoDB",
+      thumb: colorPaletteThumb,
+      link: "https://limitless-spire-35310.herokuapp.com/",
+      github: "https://github.com/parthpatel6347/streetCourts",
     },
   };
   const classes = useStlyes();
   return (
     <div className={classes.root}>
       <ProjectCard {...projectsData.project1} />
+      <ProjectCard {...projectsData.project2} />
+      <ProjectCard {...projectsData.project3} />
     </div>
   );
 }
