@@ -10,7 +10,7 @@ import bg6 from "./styles/imgs/bg6.png";
 import colorPaletteThumb from "./styles/imgs/colorPaletteThumb.png";
 import ProjectCardReverse from "./ProjectCardReverse";
 import todoThumb from "./styles/imgs/todoThumb.png";
-import todoThumb from "./styles/imgs/todoThumb.png";
+import streetCourtsThumb from "./styles/imgs/streetCourtsThumb.png";
 
 const useStlyes = makeStyles({
   root: {
@@ -37,7 +37,7 @@ function Projects(props) {
       name: "List App",
       description: "An extensive to-do app.",
       used: "React w/hooks, context API, Material UI",
-      thumb: colorPaletteThumb,
+      thumb: todoThumb,
       link: "https://parthpatel6347.github.io/react-hooks-todo-app/",
       github: "https://github.com/parthpatel6347/react-hooks-todo-app",
     },
@@ -46,7 +46,7 @@ function Projects(props) {
       name: "streetCourts",
       description: "Find and list public ball courts.",
       used: "NodeJs, Express, Bootstrap, MongoDB",
-      thumb: colorPaletteThumb,
+      thumb: streetCourtsThumb,
       link: "https://limitless-spire-35310.herokuapp.com/",
       github: "https://github.com/parthpatel6347/streetCourts",
     },

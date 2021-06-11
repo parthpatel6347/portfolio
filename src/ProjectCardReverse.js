@@ -16,7 +16,7 @@ const useStlyes = makeStyles({
     display: "flex",
     alignItems: "center",
     height: "157px",
-    paddingRight: "40px",
+    paddingLeft: "40px",
     width: "100%",
   },
   thumb: {
@@ -26,7 +26,7 @@ const useStlyes = makeStyles({
     backgroundSize: "cover",
     backgroundPosition: "center",
     position: "relative",
-    left: "-30px",
+    right: "-30px",
     borderRadius: "15px",
     transition: "all .3s",
   },
@@ -35,8 +35,9 @@ const useStlyes = makeStyles({
     display: "flex",
     flexDirection: "column",
     height: "100%",
-    marginLeft: "-6px",
+    marginRight: "-6px",
     width: "360px",
+    textAlign: "right",
     "& h3": {
       margin: 0,
       fontSize: "35px",
@@ -51,7 +52,7 @@ const useStlyes = makeStyles({
       },
       "& i": {
         fontSize: "22px",
-        marginLeft: "30px",
+        marginRight: "30px",
         opacity: ".5",
         "&:hover": {
           opacity: "1",
@@ -76,30 +77,13 @@ const useStlyes = makeStyles({
   },
 });
 
-function ProjectCard(props) {
+function ProjectCardReverse(props) {
   const classes = useStlyes(props);
   return (
     <div className={classes.root}>
       <div className={classes.content}>
-        <a
-          href={props.link}
-          target="_blank"
-          rel="noreferrer"
-          title="Go to website"
-        >
-          <div className={classes.thumb}></div>
-        </a>
         <div className={classes.description}>
           <h3>
-            <a
-              href={props.link}
-              target="_blank"
-              rel="noreferrer"
-              title="Go to website"
-            >
-              {props.name}
-              <i className="bi bi-box-arrow-up-right"></i>
-            </a>
             <a
               href={props.github}
               target="_blank"
@@ -108,13 +92,30 @@ function ProjectCard(props) {
             >
               <i className="bi bi-github"></i>
             </a>
+            <a
+              href={props.link}
+              target="_blank"
+              rel="noreferrer"
+              title="Go to website"
+            >
+              <i className="bi bi-box-arrow-up-right"></i>
+              {props.name}
+            </a>
           </h3>
           <p>{props.description}</p>
           <span className={classes.madeWith}>Made with: {props.used}</span>
         </div>
+        <a
+          href={props.link}
+          target="_blank"
+          rel="noreferrer"
+          title="Go to website"
+        >
+          <div className={classes.thumb}></div>
+        </a>
       </div>
     </div>
   );
 }
 
-export default ProjectCard;
+export default ProjectCardReverse;
