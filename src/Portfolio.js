@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import CardContainer from "./CardContainer";
 import sizes from "./styles/sizes";
 import Projects from "./Projects";
+import AboutMe from "./AboutMe";
 
 const useStlyes = makeStyles({
   root: {
@@ -104,6 +105,7 @@ const Portfolio = () => {
       </div>
 
       <Projects />
+      <AboutMe />
     </div>
   );
 };
