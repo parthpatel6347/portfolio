@@ -18,6 +18,7 @@ const useStlyes = makeStyles({
     display: "flex",
     justifyContent: "center",
     paddingBottom: "100px",
+    overflow: "hidden",
   },
 });
 

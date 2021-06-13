@@ -4,6 +4,7 @@ import CardContainer from "./CardContainer";
 import sizes from "./styles/sizes";
 import Projects from "./Projects";
 import AboutMe from "./AboutMe";
+import ContactMe from "./ContactMe";
 
 const useStlyes = makeStyles({
   root: {
@@ -106,6 +107,7 @@ const Portfolio = () => {
 
       <Projects />
       <AboutMe />
+      <ContactMe />
     </div>
   );
 };
