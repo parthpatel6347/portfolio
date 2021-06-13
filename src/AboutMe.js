@@ -14,6 +14,7 @@ import nodejs from "./styles/icons/nodejs.svg";
 import photoshop from "./styles/icons/Photoshop.svg";
 import xd from "./styles/icons/Xd.svg";
 import react from "./styles/icons/react.png";
+import Pdf from "./documents/Resume-Parth Patel.pdf";
 
 const useStlyes = makeStyles({
   root: {
@@ -89,7 +90,7 @@ const useStlyes = makeStyles({
     justifyContent: "space-evenly",
   },
   button: {
-    marginTop: "30px",
+    marginTop: "20px",
     borderRadius: "13px",
     width: "90px",
     height: "26px",
@@ -99,12 +100,17 @@ const useStlyes = makeStyles({
       color: "white",
       textTransform: "none",
       fontFamily: "'Karla', sans-serif;",
+      textDecoration: "none",
     },
   },
 });
 
 function AboutMe(props) {
   const classes = useStlyes();
+
+  const openResume = () => {
+    window.open(Pdf);
+  };
 
   return (
     <div className={classes.root}>
@@ -121,14 +127,18 @@ function AboutMe(props) {
                 variant="contained"
                 color="primary"
                 disableRipple
+                onClick={openResume}
               >
                 <span>Resume</span>
               </Button>
+
               <Button
                 className={classes.button}
                 variant="contained"
                 color="primary"
                 disableRipple
+                href="https://github.com/parthpatel6347"
+                target="_blank"
               >
                 <span>GitHub</span>
               </Button>

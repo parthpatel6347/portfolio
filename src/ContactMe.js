@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import contactBG from "./styles/imgs/contactBG.svg";
 import TextField from "@material-ui/core/TextField";
-import { Button } from "@material-ui/core";
+import IconButton from "@material-ui/core/IconButton";
+import Button from "@material-ui/core/Button";
 
 const useStlyes = makeStyles({
   root: {
@@ -37,42 +38,75 @@ const useStlyes = makeStyles({
     marginTop: "30px",
   },
   button: {
-    marginTop: "30px",
     borderRadius: "25px",
     width: "90px",
+    marginRight: "10px",
   },
   info: {
     color: "white",
     marginLeft: "13%",
     "& p": {
+      marginBottom: "8px",
       fontFamily: "'Karla', sans-serif;",
       fontWeight: "300",
       letterSpacing: "2px",
     },
-    "& i": {
-      marginRight: "25px",
-      fontSize: "24px",
+  },
+  infoLink: {
+    marginLeft: "-12px",
+    marginRight: "12px",
+    "&:hover": {
+      backgroundColor: "unset",
+      "& i": {
+        opacity: "1",
+      },
     },
+    "& i": {
+      color: "white",
+      fontSize: "20px",
+      opacity: ".8",
+    },
+  },
+  btnContainer: {
+    marginTop: "25px",
+    display: "flex",
+    alignItems: "center",
   },
 });
 
 function ContactMe(props) {
-  const [name, setName] = React.useState("");
-  const [email, setEmail] = React.useState("");
-  const [message, setMessage] = React.useState("");
+  const [content, setContent] = useState({});
+  const [status, setStatus] = useState("Sent");
+  const [showStatus, setShowStatus] = useState(false);
 
   const classes = useStlyes();
 
-  const handleChange = (event) => {
-    setName(event.target.value);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("Sending...");
+    setShowStatus(true);
+    let details = {
+      ...content,
+    };
+    let response = await fetch("http://localhost:5000/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+      body: JSON.stringify(details),
+    });
+    setStatus("Sent");
+    setTimeout(() => setShowStatus(false), 2000);
+    let result = await response.json();
+    // alert(result.status);
+
+    setContent({ name: "", email: "", message: "" });
   };
 
-  const handleEmail = (event) => {
-    setEmail(event.target.value);
+  const handleChange = (event) => {
+    setContent({ ...content, [event.target.id]: event.target.value });
   };
-  const handleMessage = (event) => {
-    setMessage(event.target.value);
-  };
+
   return (
     <div className={classes.root}>
       <div className={classes.formContainer}>
@@ -81,7 +115,7 @@ function ContactMe(props) {
           className={classes.input}
           id="name"
           label="Name"
-          value={name}
+          value={content.name}
           onChange={handleChange}
           variant="outlined"
         />
@@ -89,8 +123,8 @@ function ContactMe(props) {
           className={classes.input}
           id="email"
           label="Email"
-          value={email}
-          onChange={handleEmail}
+          value={content.email}
+          onChange={handleChange}
           variant="outlined"
         />
         <TextField
@@ -100,25 +134,54 @@ function ContactMe(props) {
           multiline
           rows={4}
           rowsMax={4}
-          value={message}
-          onChange={handleMessage}
+          value={content.message}
+          onChange={handleChange}
           variant="outlined"
         />
-        <Button
-          className={classes.button}
-          variant="contained"
-          color="primary"
-          disableRipple
-        >
-          Send
-        </Button>
+        <div className={classes.btnContainer}>
+          {" "}
+          <Button
+            className={classes.button}
+            variant="contained"
+            color="primary"
+            disableRipple
+            onClick={handleSubmit}
+            disabled={status === "Sending..."}
+          >
+            Send
+          </Button>
+          {showStatus && <span>{status}</span>}
+          {(status === "Sent") & showStatus ? (
+            <i
+              className="bi bi-check"
+              style={{ color: "green", fontSize: "25px" }}
+            ></i>
+          ) : (
+            ""
+          )}
+        </div>
       </div>
       <div className={classes.info}>
         <p>parthpalel6347@gmail.com</p>
-        <i class="bi bi-envelope"></i>
-        <i class="bi bi-twitter"></i>
+        <IconButton
+          disableRipple
+          className={classes.infoLink}
+          href="mailto:parthpatel6347@gmail.com"
+        >
+          <i class="bi bi-envelope"></i>
+        </IconButton>
+        <IconButton
+          disableRipple
+          className={classes.infoLink}
+          href="https://twitter.com/parth6347"
+          target="_blank"
+        >
+          <i class="bi bi-twitter"></i>
+        </IconButton>
 
-        <i class="bi bi-linkedin"></i>
+        <IconButton disableRipple className={classes.infoLink} href="">
+          <i class="bi bi-linkedin"></i>
+        </IconButton>
       </div>
     </div>
   );

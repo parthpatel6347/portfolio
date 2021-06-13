@@ -5,6 +5,11 @@ import sizes from "./styles/sizes";
 import Projects from "./Projects";
 import AboutMe from "./AboutMe";
 import ContactMe from "./ContactMe";
+import { Element } from "react-scroll";
+
+import ScrollTop from "./ScrollTop";
+import Fab from "@material-ui/core/Fab";
+import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 
 const useStlyes = makeStyles({
   root: {
@@ -91,10 +96,10 @@ const useStlyes = makeStyles({
   },
 });
 
-const Portfolio = () => {
+const Portfolio = (props) => {
   const classes = useStlyes();
   return (
-    <div className={classes.root}>
+    <div className={classes.root} id="back-to-top-anchor">
       <div className={classes.home}>
         <div className={classes.container}>
           <div className={classes.titleContainer}>
@@ -104,10 +109,20 @@ const Portfolio = () => {
           <CardContainer />
         </div>
       </div>
-
-      <Projects />
-      <AboutMe />
-      <ContactMe />
+      <Element name="projects">
+        <Projects />
+      </Element>
+      <Element name="aboutMe">
+        <AboutMe />
+      </Element>
+      <Element name="contactMe">
+        <ContactMe />
+      </Element>
+      <ScrollTop {...props}>
+        <Fab color="secondary" size="small" aria-label="scroll back to top">
+          <KeyboardArrowUpIcon />
+        </Fab>
+      </ScrollTop>
     </div>
   );
 };
