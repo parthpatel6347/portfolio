@@ -15,10 +15,37 @@ import streetCourtsThumb from "./styles/imgs/streetCourtsThumb.png";
 const useStlyes = makeStyles({
   root: {
     width: "100%",
-    display: "flex",
-    justifyContent: "center",
     paddingBottom: "100px",
-    overflow: "hidden",
+    display: "grid",
+  },
+  container: {
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr",
+    justifyItems: "center",
+    gridGap: "75px",
+    justifySelf: "center",
+  },
+  divider: {
+    justifySelf: "center",
+    display: "flex",
+    alignItems: "center",
+    marginBottom: "100px",
+    marginTop: "50px",
+    "& h1": {
+      color: "white",
+      fontFamily: "'Karla', sans-serif;",
+      fontWeight: "300",
+      letterSpacing: "8px",
+      fontSize: "42px",
+      // textTransform: "uppercase",
+    },
+  },
+  line: {
+    marginTop: "12px",
+    marginLeft: "10px",
+    height: "2px",
+    width: "500px",
+    backgroundColor: "#70A3C1",
   },
 });
 
@@ -55,9 +82,16 @@ function Projects(props) {
   const classes = useStlyes();
   return (
     <div className={classes.root}>
-      <ProjectCard {...projectsData.project1} />
-      <ProjectCard {...projectsData.project2} />
-      <ProjectCard {...projectsData.project3} />
+      <div className={classes.divider}>
+        <h1>Projects</h1>
+        <div className={classes.line}></div>
+      </div>
+
+      <div className={classes.container}>
+        <ProjectCard {...projectsData.project1} />
+        <ProjectCard {...projectsData.project2} />
+        <ProjectCard {...projectsData.project3} />
+      </div>
     </div>
   );
 }

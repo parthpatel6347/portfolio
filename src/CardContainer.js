@@ -40,18 +40,12 @@ const useStlyes = makeStyles({
     top: "50%",
     transform: "translate(-50%,-50%)",
     zIndex: "2",
-    // "&:hover": {
-    //   zIndex: "4",
-    // },
   },
   bottom: {
     position: "absolute",
     bottom: 0,
     right: 0,
     zIndex: "1",
-    // "&:hover": {
-    //   zIndex: "4",
-    // },
   },
 });
 
@@ -60,17 +54,17 @@ function CardContainer(props) {
     card1: {
       background: blue,
       text: "Projects",
-      color: "blue",
+      color: "#C8E9FF",
     },
     card2: {
       background: pink,
       text: "About Me",
-      color: "Pink",
+      color: "#FCB9D7",
     },
     card3: {
       background: green,
       text: "Contact",
-      color: "green",
+      color: "#93E5BE",
     },
   };
   const classes = useStlyes();

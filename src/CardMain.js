@@ -35,11 +35,18 @@ const useStlyes = makeStyles({
   cardBottom: {
     width: "100%",
     height: "13%",
-    opacity: ".17",
-    backgroundColor: "white",
+    backgroundColor: "rgba(255,255,255,0.17)",
+    display: "flex",
+    alignItems: "flex-end",
+    justifyContent: "flex-end",
   },
   text: {
+    marginRight: "50px",
     color: (props) => props.color,
+    textTransform: "uppercase",
+    fontFamily: "'Karla', sans-serif;",
+    letterSpacing: "3px",
+    fontSize: "16px",
   },
 });
 

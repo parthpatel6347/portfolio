@@ -39,7 +39,7 @@ const useStlyes = makeStyles({
     width: "360px",
     "& h3": {
       margin: 0,
-      fontSize: "35px",
+      fontSize: "32px",
       fontWeight: "300",
       letterSpacing: "2px",
       marginTop: "0px",
