@@ -29,7 +29,7 @@ const useStlyes = makeStyles({
     borderRadius: "30px",
     backdropFilter: "blur(15px)",
     width: "450px",
-    padding: "50px",
+    padding: "40px",
     "& h1": {
       margin: "0 0 10px 0",
       textAlign: "center",
