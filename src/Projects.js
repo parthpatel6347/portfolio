@@ -11,6 +11,7 @@ import colorPaletteThumb from "./styles/imgs/colorPaletteThumb.png";
 import ProjectCardReverse from "./ProjectCardReverse";
 import todoThumb from "./styles/imgs/todoThumb.png";
 import streetCourtsThumb from "./styles/imgs/streetCourtsThumb.png";
+import sizes from "./styles/sizes";
 
 const useStlyes = makeStyles({
   root: {
@@ -24,6 +25,9 @@ const useStlyes = makeStyles({
     justifyItems: "center",
     gridGap: "75px",
     justifySelf: "center",
+    [sizes.large()]: {
+      gridTemplateColumns: "1fr",
+    },
   },
   divider: {
     justifySelf: "center",
@@ -31,21 +35,39 @@ const useStlyes = makeStyles({
     alignItems: "center",
     marginBottom: "100px",
     marginTop: "50px",
+    [sizes.widthDown("sm")]: {
+      flexDirection: "column",
+      width: "100%",
+      paddingLeft: "5%",
+      paddingRight: "5%",
+      boxSizing: "border-box",
+    },
     "& h1": {
       color: "white",
       fontFamily: "'Karla', sans-serif;",
       fontWeight: "300",
       letterSpacing: "8px",
       fontSize: "42px",
-      // textTransform: "uppercase",
+      [sizes.widthDown("sm")]: {
+        letterSpacing: "6px",
+        fontSize: "42px",
+        textTransform: "uppercase",
+        fontWeight: "400",
+        marginBottom: "10px",
+        alignSelf: "flex-start",
+      },
     },
   },
   line: {
     marginTop: "12px",
     marginLeft: "10px",
-    height: "2px",
+    height: "4px",
     width: "500px",
     backgroundColor: "#70A3C1",
+    [sizes.widthDown("sm")]: {
+      width: "100%",
+      marginTop: "2px",
+    },
   },
 });
 
@@ -70,7 +92,7 @@ function Projects(props) {
       github: "https://github.com/parthpatel6347/react-hooks-todo-app",
     },
     project3: {
-      background: bg1,
+      background: bg5,
       name: "streetCourts",
       description: "Find and list public ball courts.",
       used: "NodeJs, Express, Bootstrap, MongoDB",
