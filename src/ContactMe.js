@@ -9,11 +9,22 @@ const useStlyes = makeStyles({
   root: {
     width: "100%",
     overflowX: "hidden",
-    backgroundImage: `url(${contactBG})`,
-    backgroundSize: "105%",
-    backgroundPosition: "bottom",
-    backgroundRepeat: "no-repeat",
     display: "grid",
+  },
+  background: {
+    // background: "rgb(70,181,223)",
+    background:
+      "linear-gradient(157deg, rgba(70,181,223,1) 0%, rgba(57,104,226,1) 48%, rgba(167,42,205,1) 100%)",
+    gridRow: "3",
+    height: "350px",
+    width: "98%",
+    justifySelf: "center",
+    // backgroundColor: "gray",
+    marginTop: "-150px",
+    borderTopLeftRadius: "45px",
+    borderTopRightRadius: "45px",
+    display: "grid",
+    justifyContent: "center",
   },
   container: {
     display: "grid",
@@ -25,9 +36,9 @@ const useStlyes = makeStyles({
   formContainer: {
     fontFamily: "'Karla', sans-serif;",
     boxSizing: "border-box",
-    backgroundColor: "rgba(255,255,255,.6)",
+    backgroundColor: "rgba(255,255,255,1)",
     borderRadius: "30px",
-    backdropFilter: "blur(15px)",
+    // backdropFilter: "blur(15px)",
     width: "450px",
     padding: "40px",
     "& h1": {
@@ -99,11 +110,11 @@ const useStlyes = makeStyles({
     backgroundColor: "#70A3C1",
   },
   footer: {
+    alignSelf: "end",
     fontFamily: "'Karla', sans-serif;",
     justifySelf: "center",
     color: "rgba(255,255,255,0.6)",
     marginBottom: "40px",
-    marginTop: "200px",
     fontSize: "15px",
     fontWeight: "300",
   },
@@ -144,6 +155,9 @@ function ContactMe(props) {
 
   return (
     <div className={classes.root}>
+      <div className={classes.background}>
+        <p className={classes.footer}>Designed and Built by Parth Patel</p>
+      </div>
       <div className={classes.divider}>
         <h1>Contact</h1>
         <div className={classes.line}></div>
@@ -224,7 +238,6 @@ function ContactMe(props) {
           </IconButton>
         </div>
       </div>
-      <p className={classes.footer}>Designed and Built by Parth Patel</p>
     </div>
   );
 }

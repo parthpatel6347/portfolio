@@ -13,7 +13,7 @@ import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 
 const useStlyes = makeStyles({
   root: {
-    backgroundColor: "#142534",
+    backgroundColor: "#0D2941",
     width: "100%",
     boxSizing: "border-box",
     margin: 0,
