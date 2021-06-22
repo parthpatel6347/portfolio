@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import contactBG from "./styles/imgs/contactBG.svg";
 import TextField from "@material-ui/core/TextField";
 import IconButton from "@material-ui/core/IconButton";
 import Button from "@material-ui/core/Button";
+import sizes from "./styles/sizes";
 
 const useStlyes = makeStyles({
   root: {
@@ -12,14 +12,12 @@ const useStlyes = makeStyles({
     display: "grid",
   },
   background: {
-    // background: "rgb(70,181,223)",
     background:
       "linear-gradient(157deg, rgba(70,181,223,1) 0%, rgba(57,104,226,1) 48%, rgba(167,42,205,1) 100%)",
     gridRow: "3",
     height: "350px",
     width: "98%",
     justifySelf: "center",
-    // backgroundColor: "gray",
     marginTop: "-150px",
     borderTopLeftRadius: "45px",
     borderTopRightRadius: "45px",
@@ -52,6 +50,7 @@ const useStlyes = makeStyles({
     marginTop: "30px",
   },
   button: {
+    backgroundColor: "rgba(57,104,226,1)",
     borderRadius: "25px",
     width: "90px",
     marginRight: "10px",
@@ -93,30 +92,67 @@ const useStlyes = makeStyles({
     alignItems: "center",
     marginBottom: "100px",
     marginTop: "50px",
+    [sizes.widthDown("sm")]: {
+      flexDirection: "column",
+      width: "100%",
+      paddingLeft: "5%",
+      paddingRight: "5%",
+      boxSizing: "border-box",
+    },
     "& h1": {
       color: "white",
       fontFamily: "'Karla', sans-serif;",
       fontWeight: "300",
       letterSpacing: "8px",
       fontSize: "42px",
-      // textTransform: "uppercase",
+      [sizes.widthDown("sm")]: {
+        letterSpacing: "6px",
+        fontSize: "42px",
+        textTransform: "uppercase",
+        fontWeight: "400",
+        marginBottom: "10px",
+        alignSelf: "flex-start",
+      },
     },
   },
   line: {
     marginTop: "12px",
     marginLeft: "10px",
-    height: "2px",
+    height: "4px",
     width: "500px",
-    backgroundColor: "#70A3C1",
+    backgroundImage: "linear-gradient( 135deg, #699AB8 10%, #7e69b8 100%)",
+    [sizes.widthDown("sm")]: {
+      width: "100%",
+      marginTop: "2px",
+    },
   },
   footer: {
     alignSelf: "end",
+    display: "grid",
     fontFamily: "'Karla', sans-serif;",
     justifySelf: "center",
-    color: "rgba(255,255,255,0.6)",
-    marginBottom: "40px",
+    color: "rgba(255,255,255,0.7)",
+    marginBottom: "30px",
     fontSize: "15px",
     fontWeight: "300",
+    "& a": {
+      marginTop: "10px",
+      textAlign: "center",
+      textDecoration: "none",
+      "&:visited": {
+        color: "black",
+      },
+    },
+    "& i": {
+      color: "white",
+      fontSize: "20px",
+      marginLeft: "10px",
+      opacity: ".5",
+      "&:hover": {
+        opacity: "1",
+        cursor: "pointer",
+      },
+    },
   },
 });
 
@@ -156,7 +192,17 @@ function ContactMe(props) {
   return (
     <div className={classes.root}>
       <div className={classes.background}>
-        <p className={classes.footer}>Designed and Built by Parth Patel</p>
+        <p className={classes.footer}>
+          Designed and Built by Parth Patel{" "}
+          <a
+            href="https://github.com/parthpatel6347/portfolio"
+            target="_blank"
+            rel="noreferrer"
+            title="Go to Github repository"
+          >
+            <i className="bi bi-github"></i>
+          </a>
+        </p>
       </div>
       <div className={classes.divider}>
         <h1>Contact</h1>

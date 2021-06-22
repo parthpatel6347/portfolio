@@ -63,7 +63,7 @@ const useStlyes = makeStyles({
     marginLeft: "10px",
     height: "4px",
     width: "500px",
-    backgroundColor: "#70A3C1",
+    backgroundImage: "linear-gradient( 135deg, #699AB8 10%, #7e69b8 100%)",
     [sizes.widthDown("sm")]: {
       width: "100%",
       marginTop: "2px",

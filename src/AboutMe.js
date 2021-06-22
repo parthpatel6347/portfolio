@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Button } from "@material-ui/core";
+import sizes from "./styles/sizes";
 
 import background from "./styles/imgs/aboutMeBg.png";
 import picture from "./styles/imgs/picture.png";
@@ -19,9 +20,7 @@ import Pdf from "./documents/Resume-Parth Patel.pdf";
 const useStlyes = makeStyles({
   root: {
     width: "100%",
-    height: "800px",
-    overflowX: "hidden",
-    display: "flex",
+    display: "grid",
     alignItems: "center",
     justifyContent: "center",
   },
@@ -34,7 +33,11 @@ const useStlyes = makeStyles({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    borderRadius: "50px",
+    borderRadius: "45px",
+    [sizes.widthDown("l")]: {
+      height: "590px",
+      width: "365px",
+    },
   },
   container: {
     boxSizing: "border-box",
@@ -48,11 +51,18 @@ const useStlyes = makeStyles({
     flexDirection: "column",
     justifyContent: "space-around",
     border: "2px solid rgba(255,255,255,0.3)",
+    [sizes.widthDown("l")]: {
+      height: "570px",
+      width: "345px",
+    },
   },
   topRow: {
     display: "flex",
     justifyContent: "space-around",
     alignItems: "center",
+    [sizes.widthDown("l")]: {
+      display: "grid",
+    },
   },
   bottomRow: {
     display: "flex",
@@ -86,7 +96,7 @@ const useStlyes = makeStyles({
   picture: {
     borderRadius: "50%",
     height: "150px",
-    border: "6px solid rgba(255,255,255,0.5)",
+    border: "6px solid rgba(255,255,255,1)",
   },
 
   icon: {
@@ -111,6 +121,46 @@ const useStlyes = makeStyles({
       textDecoration: "none",
     },
   },
+  divider: {
+    justifySelf: "center",
+    display: "flex",
+    alignItems: "center",
+    marginBottom: "100px",
+    marginTop: "50px",
+    [sizes.widthDown("sm")]: {
+      flexDirection: "column",
+      width: "100%",
+      paddingLeft: "5%",
+      paddingRight: "5%",
+      boxSizing: "border-box",
+    },
+    "& h1": {
+      color: "white",
+      fontFamily: "'Karla', sans-serif;",
+      fontWeight: "300",
+      letterSpacing: "8px",
+      fontSize: "42px",
+      [sizes.widthDown("sm")]: {
+        letterSpacing: "6px",
+        fontSize: "42px",
+        textTransform: "uppercase",
+        fontWeight: "400",
+        marginBottom: "10px",
+        alignSelf: "flex-start",
+      },
+    },
+  },
+  line: {
+    marginTop: "12px",
+    marginLeft: "10px",
+    height: "4px",
+    width: "500px",
+    backgroundImage: "linear-gradient( 135deg, #699AB8 10%, #7e69b8 100%)",
+    [sizes.widthDown("sm")]: {
+      width: "100%",
+      marginTop: "2px",
+    },
+  },
 });
 
 function AboutMe(props) {
@@ -122,11 +172,14 @@ function AboutMe(props) {
 
   return (
     <div className={classes.root}>
+      <div className={classes.divider}>
+        <h1>About Me</h1>
+        <div className={classes.line}></div>
+      </div>
       <div className={classes.containerBg}>
         <div className={classes.container}>
           <div className={classes.topRow}>
             <div className={classes.text}>
-              <span>About Me</span>
               <h1>Hi, I'm Parth.</h1>
               <p style={{ marginTop: "5px" }}>I love to code and design.</p>
               <p>I turn ideas into experiences.</p>
