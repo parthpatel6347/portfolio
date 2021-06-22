@@ -23,6 +23,12 @@ const useStlyes = makeStyles({
     borderTopRightRadius: "45px",
     display: "grid",
     justifyContent: "center",
+    [sizes.widthDown("l")]: {
+      width: "95%",
+      borderTopLeftRadius: "35px",
+      borderTopRightRadius: "35px",
+      marginTop: "-190px",
+    },
   },
   container: {
     display: "grid",
@@ -30,6 +36,10 @@ const useStlyes = makeStyles({
     justifyItems: "center",
     gridGap: "75px",
     justifySelf: "center",
+    [sizes.widthDown("l")]: {
+      gridTemplateColumns: "1fr",
+      gridGap: "15px",
+    },
   },
   formContainer: {
     fontFamily: "'Karla', sans-serif;",
@@ -37,38 +47,78 @@ const useStlyes = makeStyles({
     backgroundColor: "rgba(255,255,255,1)",
     borderRadius: "30px",
     // backdropFilter: "blur(15px)",
-    width: "450px",
-    padding: "40px",
+    width: "400px",
+    padding: "30px",
+    [sizes.widthDown("l")]: {
+      borderRadius: "30px",
+      width: "78%",
+      padding: "25px",
+    },
     "& h1": {
-      margin: "0 0 10px 0",
+      margin: "0",
       textAlign: "center",
       fontWeight: "400",
+      [sizes.widthDown("l")]: {
+        fontSize: "26px",
+        margin: "0",
+        fontWeight: "400",
+      },
     },
   },
   input: {
     width: "100%",
     marginTop: "30px",
+    [sizes.widthDown("l")]: {
+      marginTop: "25px",
+    },
   },
   button: {
+    borderRadius: "15px",
+    width: "85px",
+    height: "30px",
     backgroundColor: "rgba(57,104,226,1)",
-    borderRadius: "25px",
-    width: "90px",
     marginRight: "10px",
+    [sizes.widthDown("l")]: {
+      height: "35px",
+      borderRadius: "18px",
+    },
+
+    "& span": {
+      fontSize: "14px",
+      color: "white",
+      textTransform: "none",
+      fontFamily: "'Karla', sans-serif;",
+      textDecoration: "none",
+      [sizes.widthDown("l")]: {
+        fontSize: "16px",
+      },
+    },
   },
   info: {
     alignSelf: "end",
     color: "white",
     marginLeft: "13%",
+    [sizes.widthDown("l")]: {
+      textAlign: "center",
+      margin: "0",
+    },
     "& p": {
       marginBottom: "8px",
       fontFamily: "'Karla', sans-serif;",
       fontWeight: "300",
       letterSpacing: "2px",
+      [sizes.widthDown("l")]: {
+        marginBottom: "0px",
+        fontWeight: "500",
+      },
     },
   },
   infoLink: {
     marginLeft: "-12px",
     marginRight: "12px",
+    [sizes.widthDown("l")]: {
+      margin: "0",
+    },
     "&:hover": {
       backgroundColor: "unset",
       "& i": {
@@ -82,17 +132,26 @@ const useStlyes = makeStyles({
     },
   },
   btnContainer: {
+    width: "100%",
     marginTop: "25px",
     display: "flex",
     alignItems: "center",
+    [sizes.widthDown("l")]: {
+      justifyContent: "center",
+      marginTop: "25px",
+    },
   },
   divider: {
     justifySelf: "center",
     display: "flex",
     alignItems: "center",
-    marginBottom: "100px",
-    marginTop: "50px",
+    marginBottom: "200px",
+    marginTop: "10px",
+    [sizes.large()]: {
+      marginBottom: "100px",
+    },
     [sizes.widthDown("sm")]: {
+      marginBottom: "150px",
       flexDirection: "column",
       width: "100%",
       paddingLeft: "5%",
@@ -100,14 +159,16 @@ const useStlyes = makeStyles({
       boxSizing: "border-box",
     },
     "& h1": {
+      margin: "0",
       color: "white",
       fontFamily: "'Karla', sans-serif;",
       fontWeight: "300",
       letterSpacing: "8px",
-      fontSize: "42px",
+      fontSize: "20px",
+      textTransform: "uppercase",
       [sizes.widthDown("sm")]: {
         letterSpacing: "6px",
-        fontSize: "42px",
+        fontSize: "20px",
         textTransform: "uppercase",
         fontWeight: "400",
         marginBottom: "10px",
@@ -116,7 +177,6 @@ const useStlyes = makeStyles({
     },
   },
   line: {
-    marginTop: "12px",
     marginLeft: "10px",
     height: "4px",
     width: "500px",
@@ -124,6 +184,7 @@ const useStlyes = makeStyles({
     [sizes.widthDown("sm")]: {
       width: "100%",
       marginTop: "2px",
+      marginLeft: "0",
     },
   },
   footer: {
@@ -193,7 +254,7 @@ function ContactMe(props) {
     <div className={classes.root}>
       <div className={classes.background}>
         <p className={classes.footer}>
-          Designed and Built by Parth Patel{" "}
+          Designed and Built by Parth Patel
           <a
             href="https://github.com/parthpatel6347/portfolio"
             target="_blank"
@@ -218,6 +279,7 @@ function ContactMe(props) {
             value={content.name}
             onChange={handleChange}
             variant="outlined"
+            size="small"
           />
           <TextField
             className={classes.input}
@@ -226,6 +288,7 @@ function ContactMe(props) {
             value={content.email}
             onChange={handleChange}
             variant="outlined"
+            size="small"
           />
           <TextField
             className={classes.input}
@@ -237,9 +300,9 @@ function ContactMe(props) {
             value={content.message}
             onChange={handleChange}
             variant="outlined"
+            size="small"
           />
           <div className={classes.btnContainer}>
-            {" "}
             <Button
               className={classes.button}
               variant="contained"
@@ -248,7 +311,7 @@ function ContactMe(props) {
               onClick={handleSubmit}
               disabled={status === "Sending..."}
             >
-              Send
+              <span>Send</span>
             </Button>
             {showStatus && <span>{status}</span>}
             {(status === "Sent") & showStatus ? (

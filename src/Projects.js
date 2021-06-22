@@ -16,7 +16,7 @@ import sizes from "./styles/sizes";
 const useStlyes = makeStyles({
   root: {
     width: "100%",
-    paddingBottom: "100px",
+    paddingBottom: "250px",
     display: "grid",
   },
   container: {
@@ -33,7 +33,7 @@ const useStlyes = makeStyles({
     justifySelf: "center",
     display: "flex",
     alignItems: "center",
-    marginBottom: "100px",
+    marginBottom: "90px",
     marginTop: "50px",
     [sizes.widthDown("sm")]: {
       flexDirection: "column",
@@ -47,10 +47,12 @@ const useStlyes = makeStyles({
       fontFamily: "'Karla', sans-serif;",
       fontWeight: "300",
       letterSpacing: "8px",
-      fontSize: "42px",
+      fontSize: "20px",
+      textTransform: "uppercase",
+      margin: "0",
       [sizes.widthDown("sm")]: {
         letterSpacing: "6px",
-        fontSize: "42px",
+        fontSize: "20px",
         textTransform: "uppercase",
         fontWeight: "400",
         marginBottom: "10px",
@@ -59,7 +61,6 @@ const useStlyes = makeStyles({
     },
   },
   line: {
-    marginTop: "12px",
     marginLeft: "10px",
     height: "4px",
     width: "500px",
@@ -67,6 +68,7 @@ const useStlyes = makeStyles({
     [sizes.widthDown("sm")]: {
       width: "100%",
       marginTop: "2px",
+      marginLeft: "0",
     },
   },
 });

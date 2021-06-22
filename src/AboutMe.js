@@ -23,6 +23,7 @@ const useStlyes = makeStyles({
     display: "grid",
     alignItems: "center",
     justifyContent: "center",
+    paddingBottom: "250px",
   },
   containerBg: {
     backgroundImage: `url(${background})`,
@@ -168,8 +169,8 @@ const useStlyes = makeStyles({
     justifySelf: "center",
     display: "flex",
     alignItems: "center",
-    marginBottom: "100px",
-    marginTop: "50px",
+    marginBottom: "90px",
+    marginTop: "10px",
     [sizes.widthDown("sm")]: {
       flexDirection: "column",
       width: "100%",
@@ -178,14 +179,16 @@ const useStlyes = makeStyles({
       boxSizing: "border-box",
     },
     "& h1": {
+      margin: "0",
       color: "white",
       fontFamily: "'Karla', sans-serif;",
       fontWeight: "300",
       letterSpacing: "8px",
-      fontSize: "42px",
+      fontSize: "20px",
+      textTransform: "uppercase",
       [sizes.widthDown("sm")]: {
         letterSpacing: "6px",
-        fontSize: "42px",
+        fontSize: "20px",
         textTransform: "uppercase",
         fontWeight: "400",
         marginBottom: "10px",
@@ -194,7 +197,6 @@ const useStlyes = makeStyles({
     },
   },
   line: {
-    marginTop: "12px",
     marginLeft: "10px",
     height: "4px",
     width: "500px",
@@ -202,6 +204,7 @@ const useStlyes = makeStyles({
     [sizes.widthDown("sm")]: {
       width: "100%",
       marginTop: "2px",
+      marginLeft: "0",
     },
   },
 });
