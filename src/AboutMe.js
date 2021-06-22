@@ -35,6 +35,7 @@ const useStlyes = makeStyles({
     alignItems: "center",
     borderRadius: "45px",
     [sizes.widthDown("l")]: {
+      justifySelf: "center",
       height: "590px",
       width: "365px",
     },
@@ -54,6 +55,8 @@ const useStlyes = makeStyles({
     [sizes.widthDown("l")]: {
       height: "570px",
       width: "345px",
+      padding: "25px",
+      justifyContent: "unset",
     },
   },
   topRow: {
@@ -68,10 +71,20 @@ const useStlyes = makeStyles({
     display: "flex",
     justifyContent: "space-around",
     marginTop: "25px",
+    [sizes.widthDown("l")]: {
+      display: "grid",
+      gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr",
+      justifyItems: "center",
+      marginTop: "45px",
+      // gridGap: "10px",
+    },
   },
   text: {
     fontFamily: "'Karla', sans-serif;",
     textAlign: "center",
+    [sizes.widthDown("l")]: {
+      gridRowStart: "2",
+    },
     "& span": {
       fontSize: "24px",
       fontWeight: "300",
@@ -84,6 +97,10 @@ const useStlyes = makeStyles({
       letterSpacing: "",
       margin: 0,
       paddingTop: "12px",
+      [sizes.widthDown("l")]: {
+        fontSize: "50px",
+        marginTop: "15px",
+      },
     },
     "& p": {
       fontSize: "24px",
@@ -91,21 +108,38 @@ const useStlyes = makeStyles({
       lineHeight: "30px",
       letterSpacing: "",
       margin: 0,
+      [sizes.widthDown("l")]: {
+        fontSize: "20px",
+        lineHeight: "25px",
+      },
     },
   },
   picture: {
     borderRadius: "50%",
     height: "150px",
     border: "6px solid rgba(255,255,255,1)",
+    [sizes.widthDown("l")]: {
+      justifySelf: "center",
+      height: "134px",
+      border: "5px solid rgba(255,255,255,1)",
+      marginTop: "5px",
+    },
   },
 
   icon: {
     height: "36px",
     margin: "12px",
+    [sizes.widthDown("l")]: {
+      height: "30px",
+      margin: "12px 10px",
+    },
   },
   buttonContainer: {
     display: "flex",
     justifyContent: "space-evenly",
+    [sizes.widthDown("l")]: {
+      justifyContent: "space-around",
+    },
   },
   button: {
     marginTop: "20px",
@@ -113,12 +147,21 @@ const useStlyes = makeStyles({
     width: "90px",
     height: "26px",
     width: "80px",
+    [sizes.widthDown("l")]: {
+      width: "100px",
+      height: "30px",
+      borderRadius: "15px",
+      marginTop: "40px",
+    },
     "& span": {
       fontSize: "12px",
       color: "white",
       textTransform: "none",
       fontFamily: "'Karla', sans-serif;",
       textDecoration: "none",
+      [sizes.widthDown("l")]: {
+        fontSize: "16px",
+      },
     },
   },
   divider: {
