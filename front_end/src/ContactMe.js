@@ -236,7 +236,7 @@ function ContactMe(props) {
     let details = {
       ...content,
     };
-    let response = await fetch("http://localhost:3001/contact", {
+    let response = await fetch("/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",
