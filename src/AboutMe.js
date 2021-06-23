@@ -53,6 +53,8 @@ const useStlyes = makeStyles({
     flexDirection: "column",
     justifyContent: "space-around",
     border: "2px solid rgba(255,255,255,0.3)",
+    boxShadow:
+      "rgba(0, 0, 0, 0.1) 0px 3px 6px, rgba(0, 0, 0, 0.18) 0px 3px 6px",
     [sizes.widthDown("l")]: {
       height: "570px",
       width: "345px",

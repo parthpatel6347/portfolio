@@ -44,11 +44,13 @@ const useStlyes = makeStyles({
   formContainer: {
     fontFamily: "'Karla', sans-serif;",
     boxSizing: "border-box",
-    backgroundColor: "rgba(255,255,255,1)",
+    backgroundColor: "#E9FAFF",
     borderRadius: "30px",
     // backdropFilter: "blur(15px)",
-    width: "400px",
+    boxShadow:
+      "rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px",
     padding: "30px",
+    width: "400px",
     [sizes.widthDown("l")]: {
       borderRadius: "30px",
       width: "78%",
@@ -107,7 +109,9 @@ const useStlyes = makeStyles({
       fontFamily: "'Karla', sans-serif;",
       fontWeight: "300",
       letterSpacing: "2px",
+      textShadow: "2px 2px 0px rgba(0,0,0,0.3)",
       [sizes.widthDown("l")]: {
+        textShadow: "2px 2px 0px rgba(0,0,0,0.1)",
         marginBottom: "0px",
         fontWeight: "500",
       },
@@ -126,6 +130,7 @@ const useStlyes = makeStyles({
       },
     },
     "& i": {
+      textShadow: "2px 2px 0px rgba(0,0,0,0.1)",
       color: "white",
       fontSize: "20px",
       opacity: ".8",

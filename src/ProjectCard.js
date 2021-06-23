@@ -12,6 +12,8 @@ const useStlyes = makeStyles({
     borderRadius: "25px",
     display: "flex",
     alignItems: "center",
+    boxShadow:
+      "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px",
     [sizes.widthDown("sm")]: {
       marginTop: "40px",
       justifyContent: "center",
@@ -34,6 +36,7 @@ const useStlyes = makeStyles({
     },
   },
   thumb: {
+    boxSizing: "border-box",
     height: "157px",
     width: "170px",
     backgroundImage: (props) => `url(${props.thumb})`,
@@ -43,6 +46,8 @@ const useStlyes = makeStyles({
     left: "-30px",
     borderRadius: "15px",
     transition: "all .3s",
+    boxShadow:
+      "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px",
     [sizes.widthDown("sm")]: {
       height: "166spx",
       width: "213px",

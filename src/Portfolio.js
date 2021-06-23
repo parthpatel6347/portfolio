@@ -10,6 +10,7 @@ import { Element } from "react-scroll";
 import ScrollTop from "./ScrollTop";
 import Fab from "@material-ui/core/Fab";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
+import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 
 const useStlyes = makeStyles({
   root: {
@@ -68,6 +69,7 @@ const useStlyes = makeStyles({
       color: "white",
       margin: 0,
       fontSize: "60px",
+      textShadow: "6px 6px 0px rgba(0,0,0,0.5)",
       [sizes.medium()]: {
         fontSize: "42px",
         letterSpacing: "9px",
@@ -76,6 +78,7 @@ const useStlyes = makeStyles({
         fontSize: "32px",
         letterSpacing: "7px",
         marginBottom: "48px",
+        textShadow: "3px 3px 0px rgba(0,0,0,0.3)",
       },
     },
     "& p": {
@@ -93,6 +96,10 @@ const useStlyes = makeStyles({
         width: "100%",
       },
     },
+  },
+  topBtn: {
+    backgroundColor: "rgba(255,255,255,.7)",
+    backdropFilter: "blur(10px)",
   },
 });
 
@@ -119,7 +126,12 @@ const Portfolio = (props) => {
         <ContactMe />
       </Element>
       <ScrollTop {...props}>
-        <Fab color="secondary" size="small" aria-label="scroll back to top">
+        <Fab
+          className={classes.topBtn}
+          disableRipple
+          size="small"
+          aria-label="scroll back to top"
+        >
           <KeyboardArrowUpIcon />
         </Fab>
       </ScrollTop>

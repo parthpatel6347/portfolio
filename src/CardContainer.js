@@ -13,18 +13,17 @@ const useStlyes = makeStyles({
     position: "relative",
     left: "140px",
     gridArea: "1/1",
-    // border: "1px solid white",
-    height: "650px",
-    width: "500px",
+    height: "675px", //650
+    width: "550px",
     [sizes.medium()]: {
-      height: "450px",
+      height: "470px",
       width: "359px",
       left: "102px",
     },
     [sizes.small()]: {
       left: "unset",
       gridArea: "2/1",
-      height: "405px",
+      height: "500px",
       width: "323px",
     },
   },
@@ -54,7 +53,7 @@ function CardContainer(props) {
     card1: {
       background: blue,
       text: "Projects",
-      color: "#C8E9FF",
+      color: "#CEEBFF",
     },
     card2: {
       background: pink,
