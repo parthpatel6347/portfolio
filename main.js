@@ -29,11 +29,24 @@ app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname, "/front_end/build", "index.html"));
 });
 
+// const contactEmail = nodemailer.createTransport({
+//   service: "gmail",
+//   auth: {
+//     user: process.env.ID,
+//     pass: process.env.PASS,
+//   },
+// });
+
 const contactEmail = nodemailer.createTransport({
-  service: "gmail",
+  // service: "gmail",
+  host: "smtp.gmail.com",
   auth: {
+    type: "OAuth2",
     user: process.env.ID,
-    pass: process.env.PASS,
+    clientId: process.env.CLIENTID,
+    clientSecret: process.env.CLIENTSECRET,
+    refreshToken: process.env.REFRESH,
+    // accessToken: process.env.ACCESS,
   },
 });
 
@@ -58,9 +71,11 @@ app.post("/contact", (req, res) => {
              <p>Email: ${email}</p>
              <p>Message: ${message}</p>`,
   };
+  console.log(mail);
   contactEmail.sendMail(mail, (error) => {
     if (error) {
       res.json({ status: "ERROR" });
+      console.log(error);
     } else {
       res.json({ status: "Message Sent" });
     }
