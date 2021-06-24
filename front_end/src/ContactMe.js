@@ -23,7 +23,7 @@ const useStlyes = makeStyles({
     borderTopRightRadius: "45px",
     display: "grid",
     justifyContent: "center",
-    [sizes.widthDown("l")]: {
+    [sizes.widthDown("sm")]: {
       width: "95%",
       borderTopLeftRadius: "35px",
       borderTopRightRadius: "35px",
@@ -51,7 +51,7 @@ const useStlyes = makeStyles({
       "rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px",
     padding: "30px",
     width: "400px",
-    [sizes.widthDown("l")]: {
+    [sizes.widthDown("xs")]: {
       borderRadius: "30px",
       width: "78%",
       padding: "25px",
@@ -60,7 +60,7 @@ const useStlyes = makeStyles({
       margin: "0",
       textAlign: "center",
       fontWeight: "400",
-      [sizes.widthDown("l")]: {
+      [sizes.widthDown("sm")]: {
         fontSize: "26px",
         margin: "0",
         fontWeight: "400",
@@ -70,7 +70,7 @@ const useStlyes = makeStyles({
   input: {
     width: "100%",
     marginTop: "30px",
-    [sizes.widthDown("l")]: {
+    [sizes.widthDown("sm")]: {
       marginTop: "25px",
     },
   },
@@ -80,7 +80,7 @@ const useStlyes = makeStyles({
     height: "30px",
     backgroundColor: "rgba(57,104,226,1)",
     marginRight: "10px",
-    [sizes.widthDown("l")]: {
+    [sizes.widthDown("sm")]: {
       height: "35px",
       borderRadius: "18px",
     },
@@ -91,7 +91,7 @@ const useStlyes = makeStyles({
       textTransform: "none",
       fontFamily: "'Karla', sans-serif;",
       textDecoration: "none",
-      [sizes.widthDown("l")]: {
+      [sizes.widthDown("sm")]: {
         fontSize: "16px",
       },
     },
@@ -110,7 +110,7 @@ const useStlyes = makeStyles({
       fontWeight: "300",
       letterSpacing: "2px",
       textShadow: "2px 2px 0px rgba(0,0,0,0.3)",
-      [sizes.widthDown("l")]: {
+      [sizes.widthDown("sm")]: {
         textShadow: "2px 2px 0px rgba(0,0,0,0.1)",
         marginBottom: "0px",
         fontWeight: "500",
@@ -120,7 +120,7 @@ const useStlyes = makeStyles({
   infoLink: {
     marginLeft: "-12px",
     marginRight: "12px",
-    [sizes.widthDown("l")]: {
+    [sizes.widthDown("sm")]: {
       margin: "0",
     },
     "&:hover": {
@@ -141,7 +141,7 @@ const useStlyes = makeStyles({
     marginTop: "25px",
     display: "flex",
     alignItems: "center",
-    [sizes.widthDown("l")]: {
+    [sizes.widthDown("sm")]: {
       justifyContent: "center",
       marginTop: "25px",
     },

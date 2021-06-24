@@ -75,7 +75,7 @@ const useStlyes = makeStyles({
       margin: "0px",
       marginBottom: "10px",
       marginRight: "25px",
-      fontSize: "16px",
+      fontSize: "14px",
       fontWeight: "600",
     },
     [sizes.small()]: {
