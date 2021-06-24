@@ -15,8 +15,8 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 app.use(cors());
 app.use(express.json());
-app.use("/", router);
-app.use(express.static(path.resolve(__dirname, "../front_end/build")));
+// app.use("/", router);
+app.use(express.static(path.join(__dirname, "front_end/build")));
 // app.get("/", function (req, res) {
 //   res.sendFile(path.join(__dirname, "build", "index.html"));
 // });
@@ -26,7 +26,7 @@ app.get("/api", (req, res) => {
 });
 
 app.get("*", function (req, res) {
-  res.sendFile(path.resolve(__dirname, "../front_end/build", "index.html"));
+  res.sendFile(path.join(__dirname, "/front_end/build", "index.html"));
 });
 
 const contactEmail = nodemailer.createTransport({
