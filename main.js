@@ -29,24 +29,11 @@ app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname, "/front_end/build", "index.html"));
 });
 
-// const contactEmail = nodemailer.createTransport({
-//   service: "gmail",
-//   auth: {
-//     user: process.env.ID,
-//     pass: process.env.PASS,
-//   },
-// });
-
 const contactEmail = nodemailer.createTransport({
-  // service: "gmail",
-  host: "smtp.gmail.com",
+  service: "gmail",
   auth: {
-    type: "OAuth2",
     user: process.env.ID,
-    clientId: process.env.CLIENTID,
-    clientSecret: process.env.CLIENTSECRET,
-    refreshToken: process.env.REFRESH,
-    // accessToken: process.env.ACCESS,
+    pass: process.env.PASS,
   },
 });
 
@@ -75,7 +62,6 @@ app.post("/contact", (req, res) => {
   contactEmail.sendMail(mail, (error) => {
     if (error) {
       res.json({ status: "ERROR" });
-      console.log(error);
     } else {
       res.json({ status: "Message Sent" });
     }
@@ -83,24 +69,3 @@ app.post("/contact", (req, res) => {
 });
 
 app.listen(PORT, () => console.log("Server Running"));
-// router.post("/contact", (req, res) => {
-//   console.log("posting");
-//   const name = req.body.name;
-//   const email = req.body.email;
-//   const message = req.body.message;
-//   const mail = {
-//     from: name,
-//     to: process.env.EMAILTO,
-//     subject: "Message from portfolio site",
-//     html: `<p>Name: ${name}</p>
-//              <p>Email: ${email}</p>
-//              <p>Message: ${message}</p>`,
-//   };
-//   contactEmail.sendMail(mail, (error) => {
-//     if (error) {
-//       res.json({ status: "ERROR" });
-//     } else {
-//       res.json({ status: "Message Sent" });
-//     }
-//   });
-// });
