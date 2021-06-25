@@ -156,7 +156,7 @@ const useStlyes = makeStyles({
       marginBottom: "100px",
     },
     [sizes.widthDown("sm")]: {
-      marginBottom: "150px",
+      marginBottom: "90px",
       flexDirection: "column",
       width: "100%",
       paddingLeft: "5%",
@@ -330,7 +330,7 @@ function ContactMe(props) {
           </div>
         </div>
         <div className={classes.info}>
-          <p>parthpalel6347@gmail.com</p>
+          <p>parthpatel6347@gmail.com</p>
           <IconButton
             disableRipple
             className={classes.infoLink}

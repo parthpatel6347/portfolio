@@ -86,7 +86,7 @@ function Projects(props) {
     },
     project2: {
       background: bg3,
-      name: "List App",
+      name: "listApp",
       description: "An extensive to-do app.",
       used: "React w/hooks, context API, Material UI",
       thumb: todoThumb,
