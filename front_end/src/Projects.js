@@ -11,6 +11,7 @@ import colorPaletteThumb from "./styles/imgs/colorPaletteThumb.png";
 import ProjectCardReverse from "./ProjectCardReverse";
 import todoThumb from "./styles/imgs/todoThumb.png";
 import streetCourtsThumb from "./styles/imgs/streetCourtsThumb.png";
+import phoneBookThumb from "./styles/imgs/phoneBookThumb.png";
 import sizes from "./styles/sizes";
 
 const useStlyes = makeStyles({
@@ -94,7 +95,7 @@ function Projects(props) {
       github: "https://github.com/parthpatel6347/react-hooks-todo-app",
     },
     project3: {
-      background: bg5,
+      background: bg4,
       name: "streetCourts",
       description: "Find and list public ball courts.",
       used: "NodeJs, Express, Bootstrap, MongoDB",
@@ -103,11 +104,11 @@ function Projects(props) {
       github: "https://github.com/parthpatel6347/streetCourts",
     },
     project4: {
-      background: bg6,
+      background: bg5,
       name: "phoneBook",
       description: "A webapp to save and manage your contacts.",
       used: "React, NodeJs, Express, MongoDB",
-      thumb: streetCourtsThumb,
+      thumb: phoneBookThumb,
       link: "https://tranquil-inlet-87145.herokuapp.com/",
       github: "https://github.com/parthpatel6347/react-phonebook",
     },
