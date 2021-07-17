@@ -37,7 +37,7 @@ const useStlyes = makeStyles({
     borderRadius: "45px",
     [sizes.widthDown("l")]: {
       justifySelf: "center",
-      height: "590px",
+      height: "650px",
       width: "365px",
     },
   },
@@ -51,12 +51,12 @@ const useStlyes = makeStyles({
     padding: "75px",
     display: "flex",
     flexDirection: "column",
-    justifyContent: "space-around",
+    justifyContent: "space-between",
     border: "2px solid rgba(255,255,255,0.3)",
     boxShadow:
       "rgba(0, 0, 0, 0.1) 0px 3px 6px, rgba(0, 0, 0, 0.18) 0px 3px 6px",
     [sizes.widthDown("l")]: {
-      height: "570px",
+      height: "630px",
       width: "345px",
       padding: "25px",
       justifyContent: "unset",
@@ -78,14 +78,16 @@ const useStlyes = makeStyles({
       display: "grid",
       gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr",
       justifyItems: "center",
-      marginTop: "45px",
+      marginTop: "40px",
       // gridGap: "10px",
     },
   },
   text: {
     fontFamily: "'Karla', sans-serif;",
     textAlign: "center",
+    marginLeft: "-20px",
     [sizes.widthDown("l")]: {
+      margin: "unset",
       gridRowStart: "2",
     },
     "& span": {
@@ -106,14 +108,16 @@ const useStlyes = makeStyles({
       },
     },
     "& p": {
-      fontSize: "24px",
+      fontSize: "20px",
       fontWeight: "400",
-      lineHeight: "30px",
+      lineHeight: "25px",
       letterSpacing: "",
       margin: 0,
+      width: "450px",
       [sizes.widthDown("l")]: {
-        fontSize: "20px",
-        lineHeight: "25px",
+        width: "unset",
+        fontSize: "18px",
+        lineHeight: "22px",
       },
     },
   },
@@ -145,19 +149,18 @@ const useStlyes = makeStyles({
     },
   },
   button: {
-    marginTop: "20px",
-    borderRadius: "13px",
+    marginTop: "30px",
+    borderRadius: "15px",
     width: "90px",
-    height: "26px",
-    width: "80px",
+    height: "28px",
     [sizes.widthDown("l")]: {
       width: "100px",
       height: "30px",
       borderRadius: "15px",
-      marginTop: "40px",
+      marginTop: "25px",
     },
     "& span": {
-      fontSize: "12px",
+      fontSize: "14px",
       color: "white",
       textTransform: "none",
       fontFamily: "'Karla', sans-serif;",
@@ -229,8 +232,13 @@ function AboutMe(props) {
           <div className={classes.topRow}>
             <div className={classes.text}>
               <h1>Hi, I'm Parth.</h1>
-              <p style={{ marginTop: "5px" }}>I love to code and design.</p>
-              <p>I turn ideas into experiences.</p>
+              <p style={{ marginTop: "5px" }}>
+                I'm a front end developer with a passion for creating beautiful,
+                modern web experiences.
+              </p>
+              <p>
+                I enjoy coding, designing and learning something new everyday.
+              </p>
               <div className={classes.buttonContainer}>
                 <Button
                   className={classes.button}
