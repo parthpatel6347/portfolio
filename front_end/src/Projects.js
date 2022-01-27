@@ -8,10 +8,10 @@ import bg4 from "./styles/imgs/bg4.png";
 import bg5 from "./styles/imgs/bg5.png";
 import bg6 from "./styles/imgs/bg6.png";
 import colorPaletteThumb from "./styles/imgs/colorPaletteThumb.png";
-import ProjectCardReverse from "./ProjectCardReverse";
 import todoThumb from "./styles/imgs/todoThumb.png";
 import streetCourtsThumb from "./styles/imgs/streetCourtsThumb.png";
 import phoneBookThumb from "./styles/imgs/phoneBookThumb.png";
+import cryptoFinThumb from "./styles/imgs/cryptoFinThumb.png"
 import sizes from "./styles/sizes";
 
 const useStlyes = makeStyles({
@@ -77,7 +77,7 @@ const useStlyes = makeStyles({
 function Projects(props) {
   const projectsData = {
     project1: {
-      background: bg2,
+      background: bg5,
       name: "colorPalette",
       description: "Create and save beautiful color palettes.",
       used: "React, Material UI",
@@ -104,13 +104,21 @@ function Projects(props) {
       github: "https://github.com/parthpatel6347/streetCourts",
     },
     project4: {
-      background: bg5,
+      background: bg6,
       name: "phoneBook",
       description: "A webapp to save and manage your contacts.",
       used: "React, NodeJs, Express, MongoDB",
       thumb: phoneBookThumb,
       link: "https://tranquil-inlet-87145.herokuapp.com/",
       github: "https://github.com/parthpatel6347/react-phonebook",
+    },
+    project5: {
+      background: bg2,
+      name: "cryptoFin",
+      description: "Buy and sell cryptocurrencies.",
+      used: "React, Django, SQL",
+      thumb: cryptoFinThumb,
+      github: "https://github.com/parthpatel6347/cryptoFin",
     },
   };
   const classes = useStlyes();
@@ -122,6 +130,7 @@ function Projects(props) {
       </div>
 
       <div className={classes.container}>
+        <ProjectCard {...projectsData.project5} />
         <ProjectCard {...projectsData.project1} />
         <ProjectCard {...projectsData.project4} />
         <ProjectCard {...projectsData.project2} />

@@ -46,8 +46,8 @@ const useStlyes = makeStyles({
     left: "-30px",
     borderRadius: "15px",
     transition: "all .3s",
-    boxShadow:
-      "rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px",
+    boxShadow: "rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset",     // boxShadow:
+    //   "rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px",
     [sizes.widthDown("sm")]: {
       height: "166spx",
       width: "213px",
@@ -60,6 +60,7 @@ const useStlyes = makeStyles({
     fontFamily: "'Karla', sans-serif;",
     display: "flex",
     flexDirection: "column",
+    justifyContent: "space-between",
     height: "100%",
     marginLeft: "-6px",
     width: "360px",
@@ -96,11 +97,15 @@ const useStlyes = makeStyles({
       marginTop: "10px",
     },
     "& span": {
-      fontSize: "18px",
+      fontSize: "16px",
       letterSpacing: "1.5px",
-      // color: "#3D3D3D",
-      marginTop: "12px",
-      fontWeight: "300",
+      color: "rgba(0,0,0,0.65)",
+      marginTop: "15px",
+      padding: "10px",
+      fontWeight: "500",
+      border: "1px solid rgba(0,0,0,0.07)",
+      borderRadius: "15px",
+      backgroundColor: "rgba(255,255,255,0.25)"
     },
   },
   descriptionMobile: {
@@ -163,32 +168,34 @@ function ProjectCard(props) {
           href={props.link}
           target="_blank"
           rel="noreferrer"
-          title="Go to website"
+          title={props.link && "Go to website"}
         >
           <div className={classes.thumb}></div>
         </a>
         <div className={classes.description}>
-          <h3>
-            <a
-              href={props.link}
-              target="_blank"
-              rel="noreferrer"
-              title="Go to website"
-            >
-              {props.name}
-              <i className="bi bi-box-arrow-up-right"></i>
-            </a>
-            <a
-              href={props.github}
-              target="_blank"
-              rel="noreferrer"
-              title="Go to Github repository"
-            >
-              <i className="bi bi-github"></i>
-            </a>
-          </h3>
-          <p>{props.description}</p>
-          <span className={classes.madeWith}>Made with: {props.used}</span>
+          <div>
+            <h3>
+              <a
+                href={props.link}
+                target="_blank"
+                rel="noreferrer"
+                title={props.link && "Go to website"}
+              >
+                {props.name}
+                {props.link && <i className="bi bi-box-arrow-up-right"></i>}
+              </a>
+              <a
+                href={props.github}
+                target="_blank"
+                rel="noreferrer"
+                title="Go to Github repository"
+              >
+                <i className="bi bi-github"></i>
+              </a>
+            </h3>
+            <p>{props.description}</p>
+          </div>
+          <span>{props.used}</span>
         </div>
         <div className={classes.descriptionMobile}>
           <section>

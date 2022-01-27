@@ -111,7 +111,7 @@ const Portfolio = (props) => {
         <div className={classes.container}>
           <div className={classes.titleContainer}>
             <p>PARTH PATEL</p>
-            <h1>Front End Dev</h1>
+            <h1>Web Developer</h1>
           </div>
           <CardContainer />
         </div>
