@@ -30,11 +30,12 @@ app.get("*", function (req, res) {
 });
 
 const contactEmail = nodemailer.createTransport({
-  service: "gmail",
+  host: 'smtp-relay.sendinblue.com',
+  port: 587,
   auth: {
     user: process.env.ID,
-    pass: process.env.PASS,
-  },
+    pass: process.env.PASS
+  }
 });
 
 contactEmail.verify((error) => {
@@ -51,7 +52,7 @@ app.post("/contact", (req, res) => {
   const email = req.body.email;
   const message = req.body.message;
   const mail = {
-    from: name,
+    from: `${name} <${email}>`,
     to: process.env.EMAILTO,
     subject: "Message from portfolio site",
     html: `<p>Name: ${name}</p>
@@ -61,7 +62,7 @@ app.post("/contact", (req, res) => {
   console.log(mail);
   contactEmail.sendMail(mail, (error) => {
     if (error) {
-      res.json({ status: "ERROR" });
+      res.json({ status: error });
     } else {
       res.json({ status: "Message Sent" });
     }
