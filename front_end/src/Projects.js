@@ -89,7 +89,7 @@ function Projects(props) {
       background: bg3,
       name: "listApp",
       description: "An extensive to-do app.",
-      used: "React w/hooks, context API, Material UI",
+      used: "React, context API, Material UI",
       thumb: todoThumb,
       link: "https://parthpatel6347.github.io/react-hooks-todo-app/",
       github: "https://github.com/parthpatel6347/react-hooks-todo-app",
