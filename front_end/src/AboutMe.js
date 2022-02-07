@@ -15,6 +15,8 @@ import nodejs from "./styles/icons/nodejs.svg";
 import photoshop from "./styles/icons/Photoshop.svg";
 import xd from "./styles/icons/Xd.svg";
 import react from "./styles/icons/react.png";
+import django from "./styles/icons/django.png";
+import python from "./styles/icons/python.png";
 import Pdf from "./documents/Resume-Parth Patel.pdf";
 
 const useStlyes = makeStyles({
@@ -79,7 +81,6 @@ const useStlyes = makeStyles({
       gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr",
       justifyItems: "center",
       marginTop: "40px",
-      // gridGap: "10px",
     },
   },
   text: {
@@ -114,6 +115,7 @@ const useStlyes = makeStyles({
       letterSpacing: "",
       margin: 0,
       width: "450px",
+      opacity: 0.9,
       [sizes.widthDown("l")]: {
         width: "unset",
         fontSize: "18px",
@@ -135,7 +137,7 @@ const useStlyes = makeStyles({
 
   icon: {
     height: "36px",
-    margin: "12px",
+    margin: "20px",
     [sizes.widthDown("l")]: {
       height: "30px",
       margin: "12px 10px",
@@ -233,7 +235,7 @@ function AboutMe(props) {
             <div className={classes.text}>
               <h1>Hi, I'm Parth.</h1>
               <p style={{ marginTop: "5px" }}>
-                I'm a front end developer with a passion for creating beautiful,
+                I'm a Web Developer with a passion for creating beautiful,
                 modern web experiences.
               </p>
               <p>
@@ -268,11 +270,11 @@ function AboutMe(props) {
             <img className={classes.icon} src={html5} alt="html5" />
             <img className={classes.icon} src={css} alt="css" />
             <img className={classes.icon} src={javascript} alt="javascipt" />
+            <img className={classes.icon} src={python} alt="python" />
             <img className={classes.icon} src={react} alt="react" />
             <img className={classes.icon} src={nodejs} alt="nodejs" />
-            <img className={classes.icon} src={materialUI} alt="materialUI" />
+            <img className={classes.icon} src={django} alt="django" />
             <img className={classes.icon} src={bootstrap} alt="bootstrap" />
-            <img className={classes.icon} src={illustrator} alt="illustrator" />
             <img className={classes.icon} src={photoshop} alt="photoshop" />
             <img className={classes.icon} src={xd} alt="xd" />
           </div>

@@ -7,11 +7,13 @@ import bg3 from "./styles/imgs/bg3.png";
 import bg4 from "./styles/imgs/bg4.png";
 import bg5 from "./styles/imgs/bg5.png";
 import bg6 from "./styles/imgs/bg6.png";
+import bg7 from "./styles/imgs/bg7.jpg";
 import colorPaletteThumb from "./styles/imgs/colorPaletteThumb.png";
 import todoThumb from "./styles/imgs/todoThumb.png";
 import streetCourtsThumb from "./styles/imgs/streetCourtsThumb.png";
 import phoneBookThumb from "./styles/imgs/phoneBookThumb.png";
 import cryptoFinThumb from "./styles/imgs/cryptoFinThumb.png"
+import artShopThumb from "./styles/imgs/artShopThumb.png"
 import sizes from "./styles/sizes";
 
 const useStlyes = makeStyles({
@@ -86,7 +88,7 @@ function Projects(props) {
       github: "https://github.com/parthpatel6347/react-color-palette",
     },
     project2: {
-      background: bg3,
+      background: bg7,
       name: "listApp",
       description: "An extensive to-do app.",
       used: "React, context API, Material UI",
@@ -120,6 +122,15 @@ function Projects(props) {
       thumb: cryptoFinThumb,
       github: "https://github.com/parthpatel6347/cryptoFin",
     },
+    project6: {
+      background: bg3,
+      name: "artShop",
+      description: "An E-commerce website for art.",
+      used: "React, Redux, Firebase",
+      thumb: artShopThumb,
+      github: "https://github.com/parthpatel6347/artShop",
+      link: "https://art-shop-parth.herokuapp.com/",
+    },
   };
   const classes = useStlyes();
   return (
@@ -130,6 +141,7 @@ function Projects(props) {
       </div>
 
       <div className={classes.container}>
+        <ProjectCard {...projectsData.project6} />
         <ProjectCard {...projectsData.project5} />
         <ProjectCard {...projectsData.project1} />
         <ProjectCard {...projectsData.project4} />

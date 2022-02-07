@@ -10,15 +10,17 @@ import { Element } from "react-scroll";
 import ScrollTop from "./ScrollTop";
 import Fab from "@material-ui/core/Fab";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
-import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 
 const useStlyes = makeStyles({
   root: {
-    backgroundColor: "#0D2941",
+    background: "linear-gradient(62deg, rgba(11,27,41,1) 0%, rgba(11,38,62,1) 65%, rgba(21,75,122,1) 100%)",
     width: "100%",
     boxSizing: "border-box",
     margin: 0,
     padding: 0,
+    [sizes.widthDown("md")]: {
+      background: "#0D2941",
+    },
   },
   home: {
     height: "100vh",

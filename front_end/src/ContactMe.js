@@ -347,7 +347,7 @@ function ContactMe(props) {
             <i class="bi bi-twitter"></i>
           </IconButton>
 
-          <IconButton disableRipple className={classes.infoLink} href="">
+          <IconButton disableRipple className={classes.infoLink} href="https://www.linkedin.com/in/parthpatel6347" target="_blank">
             <i class="bi bi-linkedin"></i>
           </IconButton>
         </div>
