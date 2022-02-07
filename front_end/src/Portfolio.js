@@ -71,7 +71,7 @@ const useStlyes = makeStyles({
       color: "white",
       margin: 0,
       fontSize: "60px",
-      textShadow: "6px 6px 0px rgba(0,0,0,0.5)",
+      textShadow: "4px 4px 2px rgba(0,0,0,0.5)",
       [sizes.medium()]: {
         fontSize: "42px",
         letterSpacing: "9px",

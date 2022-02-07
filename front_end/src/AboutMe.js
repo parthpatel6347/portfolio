@@ -17,7 +17,6 @@ import xd from "./styles/icons/Xd.svg";
 import react from "./styles/icons/react.png";
 import django from "./styles/icons/django.png";
 import python from "./styles/icons/python.png";
-import Pdf from "./documents/Resume-Parth Patel.pdf";
 
 const useStlyes = makeStyles({
   root: {
@@ -219,10 +218,6 @@ const useStlyes = makeStyles({
 function AboutMe(props) {
   const classes = useStlyes();
 
-  const openResume = () => {
-    window.open(Pdf);
-  };
-
   return (
     <div className={classes.root}>
       <div className={classes.divider}>
@@ -247,7 +242,8 @@ function AboutMe(props) {
                   variant="contained"
                   color="primary"
                   disableRipple
-                  onClick={openResume}
+                  href="https://drive.google.com/file/d/1ScXPR0RWuKwb7yys_5Qsnr9FK-G-tjpH/view?usp=sharing"
+                  target="_blank"
                 >
                   <span>Resume</span>
                 </Button>
