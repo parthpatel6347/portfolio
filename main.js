@@ -30,8 +30,9 @@ app.get("*", function (req, res) {
 });
 
 const contactEmail = nodemailer.createTransport({
-  host: 'smtp-relay.sendinblue.com',
+  host: 'smtp.gmail.com',
   port: 587,
+  secure: false,
   auth: {
     user: process.env.ID,
     pass: process.env.PASS
@@ -62,6 +63,7 @@ app.post("/contact", (req, res) => {
   console.log(mail);
   contactEmail.sendMail(mail, (error) => {
     if (error) {
+      console.log(error)
       res.json({ status: error });
     } else {
       res.json({ status: "Message Sent" });
