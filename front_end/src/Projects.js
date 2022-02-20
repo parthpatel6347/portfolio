@@ -84,7 +84,7 @@ function Projects(props) {
       description: "Create and save beautiful color palettes.",
       used: "React, Material UI",
       thumb: colorPaletteThumb,
-      link: "https://parth-react-color.herokuapp.com/",
+      link: "https://parthpatel6347.github.io/react-color-palette/",
       github: "https://github.com/parthpatel6347/react-color-palette",
     },
     project2: {
@@ -120,6 +120,7 @@ function Projects(props) {
       description: "Buy and sell cryptocurrencies.",
       used: "React, Django, SQL",
       thumb: cryptoFinThumb,
+      link: "https://crypto-fin.netlify.app",
       github: "https://github.com/parthpatel6347/cryptoFin",
     },
     project6: {

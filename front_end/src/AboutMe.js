@@ -242,7 +242,7 @@ function AboutMe(props) {
                   variant="contained"
                   color="primary"
                   disableRipple
-                  href="https://drive.google.com/file/d/1ScXPR0RWuKwb7yys_5Qsnr9FK-G-tjpH/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1_Zssah9alLhx46wcuHCzDwLOqV9xe91c/view?usp=sharing"
                   target="_blank"
                 >
                   <span>Resume</span>
